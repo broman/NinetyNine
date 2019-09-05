@@ -8,6 +8,7 @@ package dev.broman.ninetynine
 import P10.encode
 
 object P11 {
+  // Had to check the solution for this one. Had no idea how to do this...
   def encodeModified[A](list: List[A]): List[Any] = {
     encode(list) map { t => if (t._1 == 1) t._2 else t }
   }
