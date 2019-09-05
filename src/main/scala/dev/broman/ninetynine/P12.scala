@@ -6,7 +6,8 @@ package dev.broman.ninetynine
 // => List(1, 2, 3, 3, 3, 3, 4, 4)
 
 object P12 {
-  def decode[A](list: List[(Int, A)]): A = {
-
+    // This one is easy, since it's guaranteed to be List[List[(a, b)]] you can just make a new list...
+  def decode[A](list: List[(Int, A)]): List[A] = {
+    list flatMap { e => List.fill(e._1)(e._2) }
   }
 }
