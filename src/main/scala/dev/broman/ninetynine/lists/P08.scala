@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P08
 // Compress a list, removing duplicate elements. The order should not be changed.

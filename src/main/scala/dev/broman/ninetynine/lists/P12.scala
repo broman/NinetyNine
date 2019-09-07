@@ -1,6 +1,6 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
-// P11
+// P12
 // Decode a run-length encoded list
 // decode(List(List(1, 1), List(1, 2), List(4, 3), List(2, 4))
 // => List(1, 2, 3, 3, 3, 3, 4, 4)

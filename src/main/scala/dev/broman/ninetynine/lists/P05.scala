@@ -1,9 +1,10 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P05
 // Reverse a list
 // reverse(List(1, 2, 3, 4))
 // => List(4, 3, 2, 1)
+
 
 object P05 {
   def reverse[A](list: List[A]): List[A] = {
