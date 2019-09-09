@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P02
 // Find the second to last last element of a list.

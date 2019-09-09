@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P04
 // Find the number of elements in a list

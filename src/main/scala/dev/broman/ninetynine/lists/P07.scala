@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P07
 // Flatten a nested list

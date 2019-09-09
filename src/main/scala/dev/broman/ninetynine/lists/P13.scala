@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P13
 // Implement run-length encoding without using functions from other problems.

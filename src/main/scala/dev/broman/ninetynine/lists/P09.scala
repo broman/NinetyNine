@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P09
 // Pack a list of duplicate elements into sublists.

@@ -1,4 +1,4 @@
-package dev.broman.ninetynine
+package dev.broman.ninetynine.lists
 
 // P06
 // Check if a list is a palindrome.
@@ -7,7 +7,7 @@ package dev.broman.ninetynine
 // isPalindrome(List(1, 2, 3)
 // => False
 
-import P05.reverse
+import dev.broman.ninetynine.lists.P05.reverse
 
 object P06 {
   // My first thought is to push each new element onto a stack, and pop it if the current element == peeked element
