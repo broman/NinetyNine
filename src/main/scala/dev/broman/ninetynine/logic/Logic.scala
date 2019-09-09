@@ -1,6 +1,7 @@
 package dev.broman.ninetynine.logic
 
-object Logic {
+class Logic(op1: Boolean) {
+  import Logic._
   def and(op1: Boolean, op2: Boolean): Boolean = {
     (op1, op2) match {
       case (true, true) => true
@@ -32,4 +33,13 @@ object Logic {
     }
   }
   def impl(op1: Boolean, op2: Boolean): Boolean = or(not(op1), op2)
+
+  def table(f: (Boolean, Boolean) => Boolean): Unit =
+    for(op1 <- List(true, false); op2 <- List(true, false))
+      println(s"$op1\t$op2\t${f(op1, op2)}")
+}
+
+object Logic {
+  // implicitly convert arguments from boolean to the logic class
+  implicit def booleanLogic(op1: Boolean): Logic = new Logic(op1)
 }
