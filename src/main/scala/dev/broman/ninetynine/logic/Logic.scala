@@ -2,9 +2,16 @@ package dev.broman.ninetynine.logic
 
 object Logic {
   def and(op1: Boolean, op2: Boolean): Boolean = {
-    // T & T = T, else F
     (op1, op2) match {
       case (true, true) => true
+      case _ => false
+    }
+  }
+
+  def or(op1: Boolean, op2: Boolean): Boolean = {
+    (op1, op2) match {
+      case (true, _) => true
+      case (_, true) => true
       case _ => false
     }
   }
@@ -14,10 +21,15 @@ object Logic {
     else true
   }
 
+  // equals is just if a && b or !a && !b
+  def equ(op1: Boolean, op2: Boolean): Boolean = or(and(op1, op2), and(not(op1), not(op2)))
+  def xor(op1: Boolean, op2: Boolean): Boolean = not(equ(op1, op2))
+  def nor(op1: Boolean, op2: Boolean): Boolean = not(or(op1, op2))
   def nand(op1: Boolean, op2: Boolean): Boolean = {
     (op1, op2) match {
       case (true, true) => false
       case _ => true
     }
   }
+  def impl(op1: Boolean, op2: Boolean): Boolean = or(not(op1), op2)
 }
