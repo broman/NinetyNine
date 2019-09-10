@@ -5,7 +5,7 @@ package dev.broman.ninetynine.lists
 // remove(4, List(1, 2, 3, 4, 5, 6, 7)
 // => (List(1, 2, 3, 5, 6, 7), 5)
 
-object P19 {
+object P20 {
   def remove[A](n: Int, list: List[A]): (List[A], A) = {
     list.splitAt(n) match {
       case (Nil, _) if n < 0 => null
