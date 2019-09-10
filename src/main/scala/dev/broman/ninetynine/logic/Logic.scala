@@ -43,3 +43,7 @@ object Logic {
   // implicitly convert arguments from boolean to the logic class
   implicit def booleanLogic(op1: Boolean): Logic = new Logic(op1)
 }
+
+object P49 {
+
+}
