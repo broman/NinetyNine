@@ -1,6 +1,7 @@
 package dev.broman.ninetynine.arithmetic
 
 class Arithmetic(val start: Int) {
+  import Arithmetic._
   // P31: Check if a given number is prime
   // My original solution worked but I was so caught up in fixing the
   // posted solution that I might as well keep the posted, fixed one
@@ -19,17 +20,17 @@ class Arithmetic(val start: Int) {
 
   // P34: Calculate Euler's totient function
   // Euler's so-called totient function phi(m) is defined as the number of positive integers r (1 <= r <= m) that are coprime to m.
-  def totient: Int = (1 to start) count {new Arithmetic(start).isCoprimeTo(_)}
+  def totient: Int = (1 to start) count {start.isCoprimeTo(_)}
 
-  def isPrimeFactorOf(i: Int): Boolean = new Arithmetic(i).isPrime && start % i == 0
+  def isPrimeFactorOf(i: Int): Boolean = i.isPrime && start % i == 0
 
   // P35: Determine the prime factors of a given positive integer
   def primeFactors: List[Int] =
-    (1 to start) filter {new Arithmetic(_).isPrimeFactorOf(start)} toList
+    (1 to start) filter {_.isPrimeFactorOf(start)} toList
 
   def primeFactorsMultiplicity: List[(Int, Int)] = {
     import dev.broman.ninetynine.lists.P10.encode
-    encode(new Arithmetic(start).primeFactors) map { _.swap }
+    encode(start.primeFactors) map { _.swap }
   }
 }
 
