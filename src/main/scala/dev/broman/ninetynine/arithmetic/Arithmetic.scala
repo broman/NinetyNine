@@ -8,7 +8,7 @@ class Arithmetic(val start: Int) {
   // My original solution worked but I was so caught up in fixing the
   // posted solution that I might as well keep the posted, fixed one
   def isPrime: Boolean =
-    (start > 1) && (Arithmetic.primes takeWhile {
+    (start > 1) && (primes takeWhile {
       _ <= Math.sqrt(start)
     } forall {
       start % _ != 0
@@ -81,6 +81,31 @@ class Arithmetic(val start: Int) {
     }
     time("P37 (" + n + ")") {
       n.totient
+    }
+  }
+
+  // P39: Generate a list of prime numbers in a range
+  def listPrimesInRange(r: Range): List[Int] =
+    primes dropWhile {_ < r.start } dropWhile { _ > r.last } toList
+
+  // P40
+  // Goldbach's conjecture says that every positive even number greater than 2 is the sum of two prime numbers.
+  // Write a function to find the two prime numbers that sum up to a given even integer.
+
+  def goldbach: (Int, Int) = {
+    primes takeWhile(_ < start) find { pp => (start - pp).isPrime } match {
+      case None => (-1, -1)
+      case Some(e) => (e, start - e)
+    }
+  }
+
+  // P41: Given a range of integers by its lower and upper limit, print a list of all even numbers and their Goldbach composition.
+  // Printed integers cannot be below the floor.
+  def printGoldbachList(r: Range, floor: Int = 0): Unit = {
+    for(i <- r) {
+      val (m, n) = i.goldbach
+      if(m >= floor || n >= floor)
+        println(f"$i = $m + $n")
     }
   }
 }
