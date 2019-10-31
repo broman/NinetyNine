@@ -1,7 +1,6 @@
 package dev.broman.ninetynine.logic
 
 class Logic(op1: Boolean) {
-  import Logic._
   def and(op1: Boolean, op2: Boolean): Boolean = {
     (op1, op2) match {
       case (true, true) => true
@@ -34,6 +33,8 @@ class Logic(op1: Boolean) {
   }
   def impl(op1: Boolean, op2: Boolean): Boolean = or(not(op1), op2)
 
+  // P48, redefine the class such that the functions can be used as operators
+  // See the class signature for the solution
   def table(f: (Boolean, Boolean) => Boolean): Unit =
     for(op1 <- List(true, false); op2 <- List(true, false))
       println(s"$op1\t$op2\t${f(op1, op2)}")
